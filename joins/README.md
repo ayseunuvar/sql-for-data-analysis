@@ -18,6 +18,7 @@ id | user_id | product
 ---|---------|---------
 1  | 1       | Laptop
 2  | 1       | Mouse
+3  | 2       | Keyboard
 
 ==================================================
 
@@ -61,54 +62,24 @@ Result:
 
 ==================================================
 
+FULL OUTER JOIN
+Returns all rows when there is a match in one of the tables.
+
+SELECT users.name, orders.product
+FROM users
+FULL OUTER JOIN orders
+ON users.id = orders.user_id;
+
+Result:
+- All users and all orders, NULL where no match exists
+
+==================================================
+
 NOTES
 - INNER JOIN is the most commonly used JOIN
-- LEFT JOIN is safer when you want to keep all records from the main table
-
-### ✅ What this gives you
-- ONE **Copy** button
-- Click once → **everything is copied**
-- Works exactly the way you want on GitHub
-
----
-
-## Common mistake (why “update joins” didn’t copy)
-
-If you had something like this:
-
-```md
-# SQL JOIN
-Some explanation
-
-```sql
-SELECT ...
-
-Then:
-- Copy on SQL block ❌ → only SQL
-- Explanation ❌ not included
-
-That’s why.
-
----
-
-## Recommended commit message
-
-Use one of these:
+- LEFT JOIN keeps all records from the left table
+- RIGHT JOIN keeps all records from the right table
+- FULL OUTER JOIN keeps all records from both tables
 
 
-or
-
-
----
-
-## One-line summary
-
-> If you want **one copy button → one code block → everything inside it**.
-
-If you want, next we can:
-- Apply this **same single-block style** to `basics`
-- Do `GROUP BY / HAVING`
-- Design a **consistent SQL learning repo structure**
-
-Just tell me.
 
